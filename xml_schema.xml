@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="cocktail">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element type="xsd:string" name="name"/>
+        <xsd:element name="ingredient">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="alcohol">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element type="xsd:string" name="base" maxOccurs="unbounded"/>
+                    <xsd:element type="xsd:string" name="other" maxOccurs="unbounded" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="additional">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element type="xsd:string" name="juice" maxOccurs="unbounded" minOccurs="0"/>
+                    <xsd:element type="xsd:string" name="syrup" maxOccurs="unbounded" minOccurs="0"/>
+                    <xsd:element type="xsd:string" name="garnish" maxOccurs="unbounded" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="flavor">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="taste" maxOccurs="unbounded" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute type="xsd:string" name="type" use="optional"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="hashtagSet">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element type="xsd:string" name="hashtag" maxOccurs="unbounded" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
