@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cocktail>
+   <name>Daiquiri</name>
+   <ingredient>
+       <alcohol>
+           <base>White Rum</base>
+       </alcohol>
+       <additional>
+           <juice>lime</juice>
+           <syrup>simple</syrup>
+           <garnish>lime wedge</garnish>
+       </additional>
+   </ingredient>
+   <flavor>
+       <taste type="main">sweet</taste>
+       <taste>sour</taste>
+   </flavor>
+   <hashtagSet>
+       <hashtag>classic</hashtag>
+       <hashtag>summertime</hashtag>
+   </hashtagSet>
+</cocktail>
+

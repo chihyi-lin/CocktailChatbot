@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cocktail>
+   <name>Negroni</name>
+   <ingredient>
+       <alcohol>
+           <base>Gin</base>
+           <base>Campari</base>
+           <base>sweet vermouth</base>
+       </alcohol>
+       <additional>
+           <garnish>orange twist</garnish>
+       </additional>
+   </ingredient>
+   <flavor>
+       <taste type="main">bitter</taste>
+       <taste>sweet</taste>
+   </flavor>
+   <hashtagSet>
+       <hashtag>classic</hashtag>
+       <hashtag>Italian</hashtag>
+       <hashtag>boozy</hashtag>
+   </hashtagSet>
+</cocktail>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cocktail>
+   <name>Dry Martini</name>
+   <ingredient>
+       <alcohol>
+           <base>Gin</base>
+           <other>dry vermouth</other>
+       </alcohol>
+       <additional>
+           <garnish>lemon twist</garnish>
+       </additional>
+   </ingredient>
+   <flavor>
+       <taste type="main">Gin</taste>
+       <taste>herbal</taste>    <!--taste of Gin-->
+       <taste>sweet</taste>
+   </flavor>
+   <hashtagSet>
+       <hashtag>classic</hashtag>
+       <hashtag>refreshing</hashtag>
+       <hashtag>elegant</hashtag>
+   </hashtagSet>
+</cocktail>
+
