@@ -12,6 +12,7 @@
        </additional>
    </ingredient>
    <flavor>
+       <taste type="main">boozy</taste>
        <taste type="main">bitter</taste>
        <taste>sweet</taste>
    </flavor>
@@ -21,4 +22,3 @@
        <hashtag>boozy</hashtag>
    </hashtagSet>
 </cocktail>
-
