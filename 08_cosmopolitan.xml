@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cocktail>
+   <name>Cosmopolitan</name>
+   <ingredient>
+       <alcohol>
+           <base>Vodka</base>
+           <other>Cointreau</other>
+           <other></other>
+       </alcohol>
+       <additional>
+           <juice>cranberry juice</juice>
+           <juice>lime juice</juice>
+           <garnish>lime wedge</garnish>
+       </additional>
+   </ingredient>
+   <flavor>
+       <taste type="main">sweet</taste>
+       <taste type="main">sour</taste>
+   </flavor>
+   <hashtagSet>
+       <hashtag>summertime</hashtag>
+       <hashtag>party</hashtag>
+       <hashtag>low in calories</hashtag>
+   </hashtagSet>
+</cocktail>
