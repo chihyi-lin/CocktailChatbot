@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cocktail>
-   <name>Dry Martini</name>
+   <name>Manhattan</name>
    <ingredient>
        <alcohol>
-           <base>Gin</base>
-           <other>dry vermouth</other>
+           <base>Rye</base>
+           <other>sweet vermouth</other>
+           <other>Angostura bitters</other>
        </alcohol>
        <additional>
-           <garnish>lemon twist</garnish>
+           <garnish>cherry</garnish>
        </additional>
    </ingredient>
    <flavor>
        <taste type="main">boozy</taste>
+       <taste>bitter</taste>
        <taste>spicy</taste>
    </flavor>
    <hashtagSet>
        <hashtag>classic</hashtag>
-       <hashtag>refreshing</hashtag>
        <hashtag>elegant</hashtag>
    </hashtagSet>
 </cocktail>
