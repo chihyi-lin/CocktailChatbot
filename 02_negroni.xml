@@ -4,8 +4,8 @@
    <ingredient>
        <alcohol>
            <base>Gin</base>
-           <base>Campari</base>
-           <base>sweet vermouth</base>
+           <other>Campari</other>
+           <other>sweet vermouth</other>
        </alcohol>
        <additional>
            <garnish>orange twist</garnish>
