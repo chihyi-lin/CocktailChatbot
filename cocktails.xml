@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cocktails>
+    <cocktail>
+       <name>Old Fashioned</name>
+       <ingredient>
+           <alcohol>
+               <base>Bourbon</base>
+               <other1>Angostura Bitters</other1>
+           </alcohol>
+           <additional>
+               <syrup>simple</syrup>
+               <garnish1>orange twist</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">spicy</taste>
+           <taste type="main">bitter</taste>
+           <taste>sweet</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>classic</hashtag1>
+           <hashtag2>most popular in 2021</hashtag2>
+           <hashtag3>one of the oldest cocktails</hashtag3>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Negroni</name>
+       <ingredient>
+           <alcohol>
+               <base>Gin</base>
+               <other1>Campari</other1>
+               <other2>sweet vermouth</other2>
+           </alcohol>
+           <additional>
+               <garnish1>orange twist</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">boozy</taste>
+           <taste type="main">bitter</taste>
+           <taste>sweet</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>classic</hashtag1>
+           <hashtag2>Italian</hashtag2>
+           <hashtag3>boozy</hashtag3>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Daiquiri</name>
+       <ingredient>
+           <alcohol>
+               <base>White Rum</base>
+           </alcohol>
+           <additional>
+               <juice1>lime</juice1>
+               <syrup>simple</syrup>
+               <garnish1>lime wedge</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">sweet</taste>
+           <taste>sour</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>classic</hashtag1>
+           <hashtag2>summertime</hashtag2>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Dry Martini</name>
+       <ingredient>
+           <alcohol>
+               <base>Gin</base>
+               <other1>dry vermouth</other1>
+           </alcohol>
+           <additional>
+               <garnish1>lemon twist</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">boozy</taste>
+           <taste>spicy</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>classic</hashtag1>
+           <hashtag2>refreshing</hashtag2>
+           <hashtag3>elegant</hashtag3>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Jungle Bird</name>
+       <ingredient>
+           <alcohol>
+               <base>Rum</base>
+               <other1>Campari</other1>
+           </alcohol>
+           <additional>
+               <juice1>lime</juice1>
+               <juice2>pineapple</juice2>
+               <syrup>simple</syrup>
+               <garnish1>pineapple wedge</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">sweet</taste>
+           <taste>bitter</taste>
+           <taste>spicy</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>tropical</hashtag1>
+           <hashtag2>summertime</hashtag2>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Margarita</name>
+       <ingredient>
+           <alcohol>
+               <base>Tequila</base>
+               <other1>orange liqueur</other1>
+           </alcohol>
+           <additional>
+               <juice1>lime Juice</juice1>
+               <syrup>agave</syrup>
+               <garnish1>lime wheel</garnish1>
+               <garnish2>salt</garnish2>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">sour</taste>
+           <taste type="main">sweet</taste>
+           <taste>salty</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>classic</hashtag1>
+           <hashtag2>the queen of sour cocktails</hashtag2>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Manhattan</name>
+       <ingredient>
+           <alcohol>
+               <base>Rye</base>
+               <other1>sweet vermouth</other1>
+               <other2>Angostura bitters</other2>
+           </alcohol>
+           <additional>
+               <garnish1>cherry</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">boozy</taste>
+           <taste>bitter</taste>
+           <taste>spicy</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>classic</hashtag1>
+           <hashtag2>elegant</hashtag2>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Cosmopolitan</name>
+       <ingredient>
+           <alcohol>
+               <base>Vodka</base>
+               <other1>Cointreau</other1>
+           </alcohol>
+           <additional>
+               <juice1>cranberry juice</juice1>
+               <juice2>lime juice</juice2>
+               <garnish1>lime wedge</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste type="main">sweet</taste>
+           <taste type="main">sour</taste>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>summertime</hashtag1>
+           <hashtag2>party</hashtag2>
+           <hashtag3>low in calories</hashtag3>
+       </hashtagSet>
+    </cocktail>
+</cocktails>
