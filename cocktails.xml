@@ -13,9 +13,9 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">spicy</taste>
-           <taste type="main">bitter</taste>
-           <taste>sweet</taste>
+           <taste1 type="main">spicy</taste>
+           <taste2 type="main">bitter</taste>
+           <taste3>sweet</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
@@ -37,9 +37,9 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">boozy</taste>
-           <taste type="main">bitter</taste>
-           <taste>sweet</taste>
+           <taste1 type="main">boozy</taste>
+           <taste2 type="main">bitter</taste>
+           <taste3>sweet</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
@@ -61,8 +61,8 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">sweet</taste>
-           <taste>sour</taste>
+           <taste1 type="main">sweet</taste>
+           <taste2>sour</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
@@ -82,8 +82,8 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">boozy</taste>
-           <taste>spicy</taste>
+           <taste1 type="main">boozy</taste>
+           <taste2>spicy</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
@@ -107,9 +107,9 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">sweet</taste>
-           <taste>bitter</taste>
-           <taste>spicy</taste>
+           <taste1 type="main">sweet</taste>
+           <taste2>bitter</taste>
+           <taste3>spicy</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>tropical</hashtag1>
@@ -132,9 +132,9 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">sour</taste>
-           <taste type="main">sweet</taste>
-           <taste>salty</taste>
+           <taste1 type="main">sour</taste>
+           <taste2 type="main">sweet</taste>
+           <taste3>salty</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
@@ -155,9 +155,9 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">boozy</taste>
-           <taste>bitter</taste>
-           <taste>spicy</taste>
+           <taste1 type="main">boozy</taste>
+           <taste2>bitter</taste>
+           <taste3>spicy</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
@@ -179,8 +179,8 @@
            </additional>
        </ingredient>
        <flavor>
-           <taste type="main">sweet</taste>
-           <taste type="main">sour</taste>
+           <taste1 type="main">sweet</taste>
+           <taste2 type="main">sour</taste>
        </flavor>
        <hashtagSet>
            <hashtag1>summertime</hashtag1>
