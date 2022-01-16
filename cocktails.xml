@@ -195,8 +195,8 @@
                <base>Irish whiskey</base>
            </alcohol>
            <additional>
-               <other_additonal1>hot coffee</other_additonal1>
-               <other_additonal2>brown sugar</other_additonal2>
+               <other_additional1>hot coffee</other_additional1>
+               <other_additional2>brown sugar</other_additional2>
                <garnish1>whipped heavy cream</garnish1>
            </additional>
        </ingredient>
@@ -242,9 +242,9 @@
            <additional>
                <juice1>tomato</juice1>
                <juice2>lemon</juice2>
-               <other_additonal1>Worcestershire sauce</other_additonal1>
-               <other_additonal2>pepper</other_additonal2>
-               <other_additonal3>celery salt</other_additonal3>
+               <other_additional1>Worcestershire sauce</other_additional1>
+               <other_additional2>pepper</other_additional2>
+               <other_additional3>celery salt</other_additional3>
                <garnish1>lemon</garnish1>
                <garnish2>celery</garnish2>
                <garnish3>olives</garnish3>
