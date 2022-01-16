@@ -1,55 +1,81 @@
 <?xml version="1.0"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <xsd:element name="cocktail">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element type="xsd:string" name="name"/>
-        <xsd:element name="ingredient">
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element name="alcohol">
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element type="xsd:string" name="base" maxOccurs="unbounded"/>
-                    <xsd:element type="xsd:string" name="other" maxOccurs="unbounded" minOccurs="0"/>
-                  </xsd:sequence>
-                </xsd:complexType>
-              </xsd:element>
-              <xsd:element name="additional">
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element type="xsd:string" name="juice" maxOccurs="unbounded" minOccurs="0"/>
-                    <xsd:element type="xsd:string" name="syrup" maxOccurs="unbounded" minOccurs="0"/>
-                    <xsd:element type="xsd:string" name="garnish" maxOccurs="unbounded" minOccurs="0"/>
-                  </xsd:sequence>
-                </xsd:complexType>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="flavor">
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element name="taste" maxOccurs="unbounded" minOccurs="0">
-                <xsd:complexType>
-                  <xsd:simpleContent>
-                    <xsd:extension base="xsd:string">
-                      <xsd:attribute type="xsd:string" name="type" use="optional"/>
-                    </xsd:extension>
-                  </xsd:simpleContent>
-                </xsd:complexType>
-              </xsd:element>
-            </xsd:sequence>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="hashtagSet">
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:element type="xsd:string" name="hashtag" maxOccurs="unbounded" minOccurs="0"/>
-            </xsd:sequence>
-          </xsd:complexType>
-        </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-</xsd:schema>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cocktails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cocktail" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element name="ingredient">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="alcohol">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="base"/>
+                          <xs:element type="xs:string" name="other1" minOccurs="0"/>
+                          <xs:element type="xs:string" name="other2" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="additional">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="juice1" minOccurs="0"/>
+                          <xs:element type="xs:string" name="juice2" minOccurs="0"/>
+                          <xs:element type="xs:string" name="syrup" minOccurs="0"/>
+                          <xs:element type="xs:string" name="other_additional1" minOccurs="0"/>
+                          <xs:element type="xs:string" name="other_additional2" minOccurs="0"/>
+                          <xs:element type="xs:string" name="other_additional3" minOccurs="0"/>
+                          <xs:element type="xs:string" name="garnish1" minOccurs="0"/>
+                          <xs:element type="xs:string" name="garnish2" minOccurs="0"/>
+                          <xs:element type="xs:string" name="garnish3" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="flavor">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="taste1">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="taste2" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="taste3" minOccurs="0"/>
+                    <xs:element type="xs:string" name="taste4" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hashtagSet">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="hashtag1"/>
+                    <xs:element type="xs:string" name="hashtag2" minOccurs="0"/>
+                    <xs:element type="xs:string" name="hashtag3" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
