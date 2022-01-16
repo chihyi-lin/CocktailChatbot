@@ -43,8 +43,7 @@
        </flavor>
        <hashtagSet>
            <hashtag1>classic</hashtag1>
-           <hashtag2>Italian</hashtag2>
-           <hashtag3>boozy</hashtag3>
+           <hashtag2>boozy</hashtag2>
        </hashtagSet>
     </cocktail>
 
@@ -125,7 +124,7 @@
                <other1>orange liqueur</other1>
            </alcohol>
            <additional>
-               <juice1>lime Juice</juice1>
+               <juice1>lime</juice1>
                <syrup>agave</syrup>
                <garnish1>lime wheel</garnish1>
                <garnish2>salt</garnish2>
@@ -173,8 +172,8 @@
                <other1>Cointreau</other1>
            </alcohol>
            <additional>
-               <juice1>cranberry juice</juice1>
-               <juice2>lime juice</juice2>
+               <juice1>cranberry</juice1>
+               <juice2>lime</juice2>
                <garnish1>lime wedge</garnish1>
            </additional>
        </ingredient>
@@ -186,6 +185,80 @@
            <hashtag1>summertime</hashtag1>
            <hashtag2>party</hashtag2>
            <hashtag3>low in calories</hashtag3>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Irish Coffee</name>
+       <ingredient>
+           <alcohol>
+               <base>Irish whiskey</base>
+           </alcohol>
+           <additional>
+               <other_additonal1>hot coffee</other_additonal1>
+               <other_additonal2>brown sugar</other_additonal2>
+               <garnish1>whipped heavy cream</garnish1>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste1 type="main">sweet</taste1>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>warm</hashtag1>
+           <hashtag2>creamy</hashtag2>
+           <hashtag3>morning cocktails</hashtag3>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Aviation</name>
+       <ingredient>
+           <alcohol>
+               <base>Gin</base>
+               <other1>Maraschino liqueur</other1>
+               <other2>creme de violette</other2>
+           </alcohol>
+           <additional>
+               <juice1>lemon</juice1>
+               <syrup>simple</syrup>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste1 type="main">sweet</taste1>
+           <taste2 type="main">sour</taste2>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>gorgeous</hashtag1>
+           <hashtag2>refreshing</hashtag2>
+       </hashtagSet>
+    </cocktail>
+
+    <cocktail>
+       <name>Bloody Mary</name>
+       <ingredient>
+           <alcohol>
+               <base>Vodka</base>
+           </alcohol>
+           <additional>
+               <juice1>tomato</juice1>
+               <juice2>lemon</juice2>
+               <other_additonal1>Worcestershire sauce</other_additonal1>
+               <other_additonal2>pepper</other_additonal2>
+               <other_additonal3>celery salt</other_additonal3>
+               <garnish1>lemon</garnish1>
+               <garnish2>celery</garnish2>
+               <garnish3>olives</garnish3>
+           </additional>
+       </ingredient>
+       <flavor>
+           <taste1 type="main">spicy</taste1>
+           <taste2 type="main">salty</taste2>
+           <taste3>sweet</taste3>
+           <taste4>sour</taste4>
+       </flavor>
+       <hashtagSet>
+           <hashtag1>healthy</hashtag1>
+           <hashtag2>morning cocktails</hashtag2>
        </hashtagSet>
     </cocktail>
 </cocktails>
