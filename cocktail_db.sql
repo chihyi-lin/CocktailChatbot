@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2022 年 01 月 17 日 02:26
+-- 產生時間： 2022 年 01 月 19 日 11:56
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.1
 
@@ -60,26 +60,25 @@ INSERT INTO `cocktail` (`name`, `hashtag1`, `hashtag2`, `hashtag3`) VALUES
 CREATE TABLE `flavor` (
   `name` varchar(30) NOT NULL,
   `taste1` varchar(20) NOT NULL,
-  `taste2` varchar(20) DEFAULT NULL,
-  `taste3` varchar(20) DEFAULT NULL
+  `taste2` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `flavor`
 --
 
-INSERT INTO `flavor` (`name`, `taste1`, `taste2`, `taste3`) VALUES
-('Old Fashioned', 'spicy', 'bitter', 'sweet'),
-('Negroni', 'boozy', 'bitter', 'sweet'),
-('Daiquiri', 'sweet', 'sour', ''),
-('Dry Martini', 'boozy', 'spicy', ''),
-('Jungle Bird', 'sweet', 'bitter', 'spicy'),
-('Margarita', 'sour', 'sweet', 'salty'),
-('Manhattan', 'boozy', 'bitter', 'spicy'),
-('Cosmopolitan', 'sweet', 'sour', ''),
-('Irish Coffee', 'sweet', '', ''),
-('Aviation', 'sweet', 'sour', ''),
-('Bloody Mary', 'spicy', 'salty', 'sweet');
+INSERT INTO `flavor` (`name`, `taste1`, `taste2`) VALUES
+('Old Fashioned', 'spicy', 'bitter'),
+('Negroni', 'boozy', 'bitter'),
+('Daiquiri', 'sweet', ''),
+('Dry Martini', 'boozy', ''),
+('Jungle Bird', 'sweet', ''),
+('Margarita', 'sour', 'sweet'),
+('Manhattan', 'boozy', ''),
+('Cosmopolitan', 'sweet', 'sour'),
+('Irish Coffee', 'sweet', ''),
+('Aviation', 'sweet', 'sour'),
+('Bloody Mary', 'spicy', 'salty');
 
 -- --------------------------------------------------------
 
