@@ -1,6 +1,7 @@
 import re
 import random
 import mysql.connector
+
 db = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
@@ -13,38 +14,88 @@ cursor = db.cursor()
 class CocktailBot:
 
     yes_response = ('yes', 'y', 'Yes', 'YES', "Y")
-    base = ""
-    flavor = ""
-    hastags = ""
-    juice = False
-    syrup = False
+    name = ""
 
     def __init__(self):
         pass
 
+    def show(self, ingredient):
+        print(f"Hey {self.name}! We recommend '{ingredient[0][0]}' for you!")
+        print(f"You will have {ingredient[0][1]} as your base.")
+        if len(ingredient[0][2]) > 0:
+            if len(ingredient[0][3]) > 0:
+                print(
+                    f"You'll also need some {ingredient[0][2]} and {ingredient[0][3]}. ")
+            else:
+                print(f"You'll also need some {ingredient[0][2]}")
+        if len(ingredient[0][4]) > 0:
+            if len(ingredient[0][5]) > 0:
+                print(
+                    f"Then prepare some {ingredient[0][4]} and {ingredient[0][5]} juice.")
+            else:
+                print(f"Prepare some {ingredient[0][4]} juice.")
+        if len(ingredient[0][6]) > 0:
+            print(f"And some {ingredient[0][6]} syrup as well.")
+        if len(ingredient[0][7]) > 0:
+            if len(ingredient[0][8]) > 0:
+                print(
+                    f"Don't forget to get some {ingredient[0][7]} and {ingredient[0][8]} for garnish.")
+            else:
+                print(
+                    f"Don't forget to get some {ingredient[0][7]} for garnish.")
+        if len(ingredient[0][9]) > 0:
+            print(
+                f"At last, add some {ingredient[0][9]} and {ingredient[0][10]} to make it perfect!")
+        print(
+            f"Then you'll have a nice glass of {ingredient[0][0]}. Enjoy your cocktail!")
+
     def sweet_fruity(self):
         hashtag = input(
-            "Pick one with your intuition! 1)SUMMERTIME 2)TROPICAL 3)THE QUEEN 4)PARTY 5)GORGEOUS")
-        if hashtag.lower() in ("1", "summetime"):
+            "Pick one with your intuition! 1)CLASSIC 2)TROPICAL 3)THE QUEEN 4)PARTY 5)GORGEOUS ")
+        if hashtag.lower() in ("1", "classic"):
+            base = input("Which base do you prefer? 1)WHITE RUM  2)TEQUILA ")
             # Daiquiri
-            hastags = "summertime"
-            return
+            if base.lower() in ("1", "rum", "white rum"):
+                cursor = db.cursor()
+                cursor.execute(
+                    "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sweet' OR f.taste2 = 'sweet') AND (c.hashtag1 LIKE '%classic%' OR c.hashtag2 LIKE '%classic%' OR c.hashtag3 LIKE '%classic%' ) AND NOT(i.juice1 = '') AND i.base = 'White Rum';")
+                result = cursor.fetchall()
+                return self.show(result)
+            # Margarita
+            elif base.lower() in ("2", "tequila"):
+                cursor = db.cursor()
+                cursor.execute(
+                    "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sweet' OR f.taste2 = 'sweet') AND (c.hashtag1 LIKE '%classic%' OR c.hashtag2 LIKE '%classic%' OR c.hashtag3 LIKE '%classic%' ) AND NOT(i.juice1 = '') AND i.base = 'Tequila';")
+                result = cursor.fetchall()
+                return self.show(result)
         elif hashtag.lower() in ("2", "tropical"):
             # Jungle bird
-            hastags = "tropical"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sweet' OR f.taste2 = 'sweet') AND (c.hashtag1 LIKE '%tropical%' OR c.hashtag2 LIKE '%tropical%' OR c.hashtag3 LIKE '%tropical%' ) AND NOT(i.juice1 = '');")
+            result = cursor.fetchall()
+            return self.show(result)
         elif hashtag.lower() in ("3", "the queen", "queen"):
             # Margarita
-            hashtags = "the queen"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sweet' OR f.taste2 = 'sweet') AND (c.hashtag1 LIKE '%queen%' OR c.hashtag2 LIKE '%queen%' OR c.hashtag3 LIKE '%queen%' ) AND NOT(i.juice1 = '');")
+            result = cursor.fetchall()
+            return self.show(result)
         elif hashtag.lower() in ("4", "party"):
             # Cosmopolitan
-            hashtags = "party"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sweet' OR f.taste2 = 'sweet') AND (c.hashtag1 LIKE '%party%' OR c.hashtag2 LIKE '%party%' OR c.hashtag3 LIKE '%party%' ) AND NOT(i.juice1 = '');")
+            result = cursor.fetchall()
+            return self.show(result)
         elif hashtag.lower() in ("5", "gorgeous"):
             # Aviation
-            hashtags = "gorgerous"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sweet' OR f.taste2 = 'sweet') AND (c.hashtag1 LIKE '%gorgeous%' OR c.hashtag2 LIKE '%gorgeous%' OR c.hashtag3 LIKE '%gorgeous%' ) AND NOT(i.juice1 = '');")
+            result = cursor.fetchall()
+            return self.show(result)
         else:
             return self.sweet_fruity()
 
@@ -53,119 +104,142 @@ class CocktailBot:
             "Pick one with your intuition! 1)THE QUEEN OF SOUR COCKTAIL 2)REFRESHING ")
         if hashtag.lower() in ("1", "the queen", "the queen of sour cocktail"):
             # margarita
-            hashtag = "the queen"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sour' OR f.taste2 = 'sour') AND (c.hashtag1 LIKE '%queen%' OR c.hashtag2 LIKE '%queen%' OR c.hashtag3 LIKE '%queen%') AND NOT(i.syrup = '') ;")
+            result = cursor.fetchall()
+            return self.show(result)
         elif hashtag.lower() in ("2", "refreshing"):
             # aviation
-            hashtags = "refreshing"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'sour' OR f.taste2 = 'sour') AND (c.hashtag1 LIKE '%refreshing%' OR c.hashtag2 LIKE '%refreshing%' OR c.hashtag3 LIKE '%refreshing%') AND NOT(i.syrup = '') ;")
+            result = cursor.fetchall()
+            return self.show(result)
         else:
             return self.sour_syrup()
 
     def boozy_gin(self):
-        hashtag = input("Pick one with your intuition! 1)BOOZY 2)ELEGANT ")
-        if hashtag.lower() in ("1", "boozy"):
-            # negroni
-            hashtags = "boozy"
-            return
-        elif hashtag.lower() in ("2", "elegant"):
+        hashtag = input("Would you like dry or sweet vermouth! 1)DRY 2)SWEET ")
+        if hashtag.lower() in ("1", "dry"):
             # dry martini
-            hashtags = "elegant"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'boozy' OR f.taste2 = 'boozy') AND (i.other1 LIKE '%dry%' OR i.other2 LIKE '%dry%');")
+            result = cursor.fetchall()
+            return self.show(result)
+        elif hashtag.lower() in ("2", "sweet"):
+            # Negroni
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'boozy' OR f.taste2 = 'boozy') AND (i.other1 LIKE '%sweet%' OR i.other2 LIKE '%sweet%');")
+            result = cursor.fetchall()
+            return self.show(result)
         else:
-            return self.sour_syrup()
+            return self.boozy_gin()
 
     def sweet(self):
         prefer_juice = input("Would you like something fruity? 1)Yes 2)No ")
         if prefer_juice.lower() in ("1", "yes", "y"):
             # return Daiquiri, Jungle bird, Margarita, Cosmopolitan, Aviation
-            juice = True
             return self.sweet_fruity()
         elif prefer_juice.lower() in ("2", "no", "n"):
             # return Irish Coffee
             cursor.execute(
-                "SELECT name FROM sys.flavor WHERE taste1 = 'sweet' OR taste2 = 'sweet';")
+                "SELECT i.* FROM sys.ingredient i INNER JOIN sys.flavor f ON f.name = i.name WHERE i.juice1 = ''  AND f.taste1 = 'sweet' ;")
             result = cursor.fetchall()
-            print(result)
+            return self.show(result)
         else:
             return self.sweet()
 
     def sour(self):
         prefer_syrup = input(
-            "Added syrup or not? 1)YES, PLEASE! 2) NOPE")
+            "Added syrup or not? 1)YES, PLEASE! 2)NOPE ")
         if prefer_syrup.lower() in ("1", "y", "yes"):
             # return Margarita, Aviation
-            syrup = True
             return self.sour_syrup()
         elif prefer_syrup.lower() in ("2", "n", "no", "nope"):
-            # return Cosmopolitan
-            return
+            # Cosmopolitan
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN sys.flavor f ON f.name = i.name WHERE i.syrup = ''  AND (f.taste1 = 'sour' OR f.taste2 = 'sour') ;")
+            result = cursor.fetchall()
+            return self.show(result)
         else:
             return self.sour()
 
     def bitter(self):
         pop = input(
             "Would you like to try the most popular cocktail in 2021? 1)YES 2)NO ")
-        if pop.lower() in ("y", "yes"):
-            # return old fashion
-            hastag = "popular"
-            return
+        if pop.lower() in ("1", "y", "yes"):
+            # old fashion
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'bitter' OR f.taste2 = 'bitter') AND (c.hashtag1 LIKE '%popular%' OR c.hashtag2 LIKE '%popular%' OR c.hashtag3 LIKE '%popular%' ) ;")
+            result = cursor.fetchall()
+            return self.show(result)
 
-        elif pop.lower() in ("n", "no"):
+        elif pop.lower() in ("1", "n", "no"):
             # negroni
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'bitter' OR f.taste2 = 'bitter') AND NOT(c.hashtag1 LIKE '%popular%' OR c.hashtag2 LIKE '%popular%' OR c.hashtag3 LIKE '%popular%' ) ;")
+            result = cursor.fetchall()
+            return self.show(result)
         else:
             return self.bitter()
 
     def boozy(self):
-        prefer_base = input("Gin base or Rye base? 1)GIN 2)RYE")
+        prefer_base = input("Gin base or Rye base? 1)GIN 2)RYE ")
         if prefer_base.lower() in ("1", "gin"):
             # Negroni, Dry Martini
-            base = "gin"
             return self.boozy_gin()
         elif prefer_base.lower() in ("2", "rye"):
             # Manhattan
-            base = "rye"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN sys.flavor f ON f.name = i.name WHERE (f.taste1 = 'boozy' OR f.taste2 = 'boozy') AND i.base = 'rye';")
+            result = cursor.fetchall()
+            return self.show(result)
 
     def spicy(self):
         prefer = input(
             "Something healthy or something classic? 1)HEALTHY 2)CLASSIC ")
         if prefer.lower() in ("1", "healthy"):
             # bloody mary
-            hashtags = "healthy"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'spicy' OR f.taste2 = 'spicy') AND (c.hashtag1 LIKE '%healthy%' OR c.hashtag2 LIKE '%healthy%' OR c.hashtag3 LIKE '%healthy%');")
+            result = cursor.fetchall()
+            return self.show(result)
         elif prefer.lower() in ("2", "classic"):
             # old fashioned
-            hashtags = "classic"
-            return
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE (f.taste1 = 'spicy' OR f.taste2 = 'spicy') AND NOT (c.hashtag1 LIKE '%healthy%' OR c.hashtag2 LIKE '%healthy%' OR c.hashtag3 LIKE '%healthy%');")
+            result = cursor.fetchall()
+            return self.show(result)
         else:
             return self.spicy()
 
     def flavor_preferance(self):
         flavor = input(
-            "Do you want something 1)SWEET 2)SOUR 3)BITTER 4)BOOZY? 5)SPICY")
+            "Do you want something 1)SWEET 2)SOUR 3)BITTER 4)BOOZY? 5)SPICY ")
         if flavor.lower() in ("sweet", "1"):
-            flavor = "sweet"
             return self.sweet()
         elif flavor.lower() in ("sour", "2"):
-            flavor = "sour"
             return self.sour()
         elif flavor.lower() in ("bitter", "3"):
-            flavor = "bitter"
             return self.bitter()
         elif flavor.lower() in ("boozy", "4"):
-            flavor = "boozy"
             return self.boozy()
         elif flavor.lower() in ("spicy", "5"):
-            flavor = "spicy"
             return self.spicy()
 
     # greeting to the user
     def greeting(self):
         # asking for user's name
         name = input("Hi! Welcome to THE COCKTAIL WORLD! What is your name? ")
-
+        self.name = name
         ready = input(
             f"Hello, {name}! I will now recommend some cocktails to you base on your answers. Are you ready to start? (y/n) ")
 
