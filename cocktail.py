@@ -1,5 +1,3 @@
-import re
-import random
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -18,6 +16,7 @@ class CocktailBot:
 
     def __init__(self):
         pass
+    # show results with sql queries
 
     def show(self, ingredient):
         print(f"Hey {self.name}! We recommend '{ingredient[0][0]}' for you!")
@@ -48,6 +47,7 @@ class CocktailBot:
                 f"At last, add some {ingredient[0][9]} and {ingredient[0][10]} to make it perfect!")
         print(
             f"Then you'll have a nice glass of {ingredient[0][0]}. Enjoy your cocktail!")
+    # if sweet and juice prefered, ask hashtag
 
     def sweet_fruity(self):
         hashtag = input(
@@ -98,6 +98,7 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.sweet_fruity()
+    # if sour and syrup preferred, ask prefered hashtag
 
     def sour_syrup(self):
         hashtag = input(
@@ -118,6 +119,7 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.sour_syrup()
+    # if boozy chosen, ask which base is prefered
 
     def boozy_gin(self):
         hashtag = input("Would you like dry or sweet vermouth! 1)DRY 2)SWEET ")
@@ -138,6 +140,7 @@ class CocktailBot:
         else:
             return self.boozy_gin()
 
+    # if user prefers sweet
     def sweet(self):
         prefer_juice = input("Would you like something fruity? 1)Yes 2)No ")
         if prefer_juice.lower() in ("1", "yes", "y"):
@@ -152,6 +155,7 @@ class CocktailBot:
         else:
             return self.sweet()
 
+    # if user prefers sour, ask whether syrup is prefereed
     def sour(self):
         prefer_syrup = input(
             "Added syrup or not? 1)YES, PLEASE! 2)NOPE ")
@@ -166,6 +170,7 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.sour()
+    # if user prefers bitter
 
     def bitter(self):
         pop = input(
@@ -187,6 +192,7 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.bitter()
+    # if user prefers boozy
 
     def boozy(self):
         prefer_base = input("Gin base or Rye base? 1)GIN 2)RYE ")
@@ -200,6 +206,7 @@ class CocktailBot:
                 "SELECT i.* FROM sys.ingredient i INNER JOIN sys.flavor f ON f.name = i.name WHERE (f.taste1 = 'boozy' OR f.taste2 = 'boozy') AND i.base = 'rye';")
             result = cursor.fetchall()
             return self.show(result)
+    # if user prefers spicy
 
     def spicy(self):
         prefer = input(
@@ -220,6 +227,7 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.spicy()
+    # ask user's flavor preference
 
     def flavor_preferance(self):
         flavor = input(
