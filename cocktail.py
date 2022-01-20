@@ -223,7 +223,7 @@ class CocktailBot:
 
     def flavor_preferance(self):
         flavor = input(
-            "Do you want something 1)SWEET 2)SOUR 3)BITTER 4)BOOZY? 5)SPICY ")
+            "Do you want something 1)SWEET 2)SOUR 3)BITTER 4)BOOZY 5)SPICY? ")
         if flavor.lower() in ("sweet", "1"):
             return self.sweet()
         elif flavor.lower() in ("sour", "2"):
