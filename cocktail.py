@@ -227,8 +227,8 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.spicy()
-    # ask user's flavor preference
 
+    # ask user's flavor preference
     def flavor_preferance(self):
         flavor = input(
             "Do you want something 1)SWEET 2)SOUR 3)BITTER 4)BOOZY 5)SPICY? ")
@@ -246,7 +246,7 @@ class CocktailBot:
     # greeting to the user
     def greeting(self):
         # asking for user's name
-        name = input("Hi! Welcome to THE COCKTAIL WORLD! What is your name? ")
+        name = input("Hi! I'm your Sweet Bartender! What is your name? ")
         self.name = name
         ready = input(
             f"Hello, {name}! I will now recommend some cocktails to you base on your answers. Are you ready to start? (y/n) ")
