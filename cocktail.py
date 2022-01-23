@@ -227,8 +227,8 @@ class CocktailBot:
             return self.show(result)
         else:
             return self.spicy()
-    # ask user's flavor preference
 
+    # ask user's flavor preference
     def flavor_preferance(self):
         flavor = input(
             "Do you want something 1)SWEET 2)SOUR 3)BITTER 4)BOOZY 5)SPICY? ")
