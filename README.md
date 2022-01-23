@@ -6,6 +6,6 @@
 Files of the project
   * cocktails.xml: 
   * xml_schema.xml
-  * XMLtoDB.py: 
-  * cocktail_db.sql:
+  * XMLtoDB.py: Python code for extracting and inserting xml data into database
+  * cocktail_db.sql: The database of cocktail recipes
   * cocktail.py: Python code for the chatbot using loops and SQL queries
