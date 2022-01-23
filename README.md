@@ -8,4 +8,4 @@
   * xml_schema.xml
   * XMLtoDB.py: 
   * cocktail_db.sql:
-  * cocktail.py: Chatbot file
+  * cocktail.py: Python code for the chatbot using loops and SQL queries
