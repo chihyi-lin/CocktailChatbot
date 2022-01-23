@@ -246,7 +246,7 @@ class CocktailBot:
     # greeting to the user
     def greeting(self):
         # asking for user's name
-        name = input("Hi! Welcome to THE COCKTAIL WORLD! What is your name? ")
+        name = input("Hi! I'm your Sweet Bartender! What is your name? ")
         self.name = name
         ready = input(
             f"Hello, {name}! I will now recommend some cocktails to you base on your answers. Are you ready to start? (y/n) ")
