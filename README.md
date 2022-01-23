@@ -5,7 +5,7 @@
 
 ### Project Idea
 We would like to build a chatbot that is able to recommend a suitable cocktail for users who are not sure what they want.
-After a few questions, the chatbat will then return a cocktail recepie that is chosen base on the users' input.
+After a few questions, the chatbot will then return a cocktail recipe that is chosen base on the users' input.
 
 ### Workflow
 * Collect : Plain text from online cocktail recipes
