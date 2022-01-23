@@ -2,8 +2,7 @@
 
 ##### 2021/22 WS Text Technology Final Project
 
-
-* Files
+Files of the project
   * cocktails.xml: 
   * xml_schema.xml
   * XMLtoDB.py: 
