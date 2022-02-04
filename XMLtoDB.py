@@ -22,7 +22,7 @@ else:
 # reading xml file , file name is cocktail.xml
 tree = ET.parse('cocktails.xml')
   
-# in our xml file student is the root for all student data.
+# in our xml file cocktails is the root for all cocktail data.
 data2 = tree.findall('cocktail')
 
 
