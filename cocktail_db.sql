@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- 主機： localhost
--- 產生時間： 2022 年 01 月 19 日 11:56
--- 伺服器版本： 10.4.22-MariaDB
--- PHP 版本： 8.1.1
+-- Host: localhost
+-- Generation Time: Feb 16, 2022 at 02:28 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `database`
+-- Database: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `cocktail`
+-- Table structure for table `cocktail`
 --
 
 CREATE TABLE `cocktail` (
@@ -35,7 +35,7 @@ CREATE TABLE `cocktail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 傾印資料表的資料 `cocktail`
+-- Dumping data for table `cocktail`
 --
 
 INSERT INTO `cocktail` (`name`, `hashtag1`, `hashtag2`, `hashtag3`) VALUES
@@ -54,7 +54,7 @@ INSERT INTO `cocktail` (`name`, `hashtag1`, `hashtag2`, `hashtag3`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `flavor`
+-- Table structure for table `flavor`
 --
 
 CREATE TABLE `flavor` (
@@ -64,7 +64,7 @@ CREATE TABLE `flavor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 傾印資料表的資料 `flavor`
+-- Dumping data for table `flavor`
 --
 
 INSERT INTO `flavor` (`name`, `taste1`, `taste2`) VALUES
@@ -83,7 +83,36 @@ INSERT INTO `flavor` (`name`, `taste1`, `taste2`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `ingredient`
+-- Table structure for table `flavor_minor`
+--
+
+CREATE TABLE `flavor_minor` (
+  `name` varchar(30) NOT NULL,
+  `taste3` varchar(20) NOT NULL,
+  `taste4` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `flavor_minor`
+--
+
+INSERT INTO `flavor_minor` (`name`, `taste3`, `taste4`) VALUES
+('Old Fashioned', 'sweet', ''),
+('Negroni', 'sweet', ''),
+('Daiquiri', 'sour', ''),
+('Dry Martini', 'spicy', ''),
+('Jungle Bird', 'bitter', 'spicy'),
+('Margarita', 'salty', ''),
+('Manhattan', 'bitter', 'spicy'),
+('Cosmopolitan', '', ''),
+('Irish Coffee', '', ''),
+('Aviation', '', ''),
+('Bloody Mary', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ingredient`
 --
 
 CREATE TABLE `ingredient` (
@@ -101,7 +130,7 @@ CREATE TABLE `ingredient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 傾印資料表的資料 `ingredient`
+-- Dumping data for table `ingredient`
 --
 
 INSERT INTO `ingredient` (`name`, `base`, `other1`, `other2`, `juice1`, `juice2`, `syrup`, `garnish1`, `garnish2`, `other_add1`, `other_add2`) VALUES
@@ -118,39 +147,39 @@ INSERT INTO `ingredient` (`name`, `base`, `other1`, `other2`, `juice1`, `juice2`
 ('Bloody Mary', 'Vodka', '', '', 'tomato', 'lemon', '', 'lemon', 'celery', 'Worcestershire sauce', 'pepper');
 
 --
--- 已傾印資料表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 資料表索引 `cocktail`
+-- Indexes for table `cocktail`
 --
 ALTER TABLE `cocktail`
   ADD PRIMARY KEY (`name`);
 
 --
--- 資料表索引 `flavor`
+-- Indexes for table `flavor`
 --
 ALTER TABLE `flavor`
   ADD KEY `connflavor` (`name`);
 
 --
--- 資料表索引 `ingredient`
+-- Indexes for table `ingredient`
 --
 ALTER TABLE `ingredient`
   ADD KEY `conningredient` (`name`);
 
 --
--- 已傾印資料表的限制式
+-- Constraints for dumped tables
 --
 
 --
--- 資料表的限制式 `flavor`
+-- Constraints for table `flavor`
 --
 ALTER TABLE `flavor`
   ADD CONSTRAINT `connflavor` FOREIGN KEY (`name`) REFERENCES `cocktail` (`name`);
 
 --
--- 資料表的限制式 `ingredient`
+-- Constraints for table `ingredient`
 --
 ALTER TABLE `ingredient`
   ADD CONSTRAINT `conningredient` FOREIGN KEY (`name`) REFERENCES `cocktail` (`name`);
