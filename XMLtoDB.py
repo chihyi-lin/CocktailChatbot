@@ -1,9 +1,9 @@
 # import xml element tree
 import xml.etree.ElementTree as ET
-  
+
 # import mysql connector
 import mysql.connector
-  
+
 # give the connection parameters
 # user name is root
 # password is empty
@@ -13,7 +13,7 @@ conn = mysql.connector.connect(user='root',
                                password='', 
                                host='localhost', 
                                database='database')
-  
+
 if conn:
     print ("Connected Successfully")
 else:
@@ -21,10 +21,9 @@ else:
 
 # reading xml file , file name is cocktail.xml
 tree = ET.parse('cocktails.xml')
-  
-# in our xml file cocktails is the root for all cocktail data.
-data2 = tree.findall('cocktail')
 
+# in our xml file cocktail is the root for all cocktail data.
+data2 = tree.findall('cocktail')
 
 # retrieving the data and insert into table
 # i value for xml data 
@@ -35,7 +34,7 @@ for i, j in zip(data2, range(1, 31)):
 
     for k, l in zip(hashtagSet, range(1, 6)):
         hashtag1 = k.find('hashtag1').text
-        
+
         try:
             hashtag2 = k.find('hashtag2').text
         except:
@@ -48,22 +47,19 @@ for i, j in zip(data2, range(1, 31)):
 
     # sql query to insert data into database
     data = """INSERT INTO cocktail(name,hashtag1,hashtag2,hashtag3) VALUES(%s,%s,%s,%s)"""
-  
+
     # creating the cursor object
     c = conn.cursor()
-      
+
     # executing cursor object
     c.execute(data, (name, hashtag1, hashtag2, hashtag3))
     conn.commit()
     print("cocktail tabelCocktail No-", j, " stored successfully")
 
-# retrieving the data and insert into table
-# i value for xml data 
-# j value printing number of values that are stored
 for i, j in zip(data2, range(1, 31)):
     name = i.find('name').text
     ingredient = i.findall('ingredient')
-    
+
     for k, l in zip(ingredient, range(1, 5)):
         alcohol = k.findall('alcohol')
 
@@ -73,13 +69,14 @@ for i, j in zip(data2, range(1, 31)):
                 other1 = m.find('other1').text
             except:
                 other1 = ""
+
             try:
                 other2 = m.find('other2').text
             except:
                 other2 = ""
 
         additional = k.findall('additional')
-        
+
         for o, p in zip(additional, range(1, 8)):
             try:
                 juice1 = o.find('juice1').text
@@ -90,12 +87,12 @@ for i, j in zip(data2, range(1, 31)):
                 juice2 = o.find('juice2').text
             except:
                 juice2 = ""
-                
+
             try:
                 syrup = o.find('syrup').text
             except:
                 syrup = ""
-                
+
             try:
                 garnish1 = o.find('garnish1').text
             except:
@@ -116,47 +113,53 @@ for i, j in zip(data2, range(1, 31)):
             except:
                 other_add2 = ""
 
-
-    # sql query to insert data into database
     data = """INSERT INTO ingredient(name,base,other1,other2,juice1,juice2,syrup,garnish1,garnish2,other_add1,other_add2) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-  
-    # creating the cursor object
+
     c = conn.cursor()
-      
-    # executing cursor object
+
     c.execute(data, (name, base, other1, other2, juice1, juice2, syrup, garnish1, garnish2, other_add1, other_add2))
     conn.commit()
     print("cocktail tableIngredient No-", j, " stored successfully")
 
-
-
-# retrieving the data and insert into table
-# i value for xml data 
-# j value printing number of values that are stored
 for i, j in zip(data2, range(1, 31)):
     name = i.find('name').text
     flavor = i.findall('flavor')
 
     for k, l in zip(flavor, range(1, 6)):
         taste1 = k.find('taste1').text
-        
+
         try:
             taste2 = k.find('taste2').text
         except:
             taste2 = ""
-        
+
+    data = """INSERT INTO flavor(name,taste1,taste2) VALUES(%s,%s,%s)"""
+
+    c = conn.cursor()
+
+    c.execute(data, (name, taste1, taste2))
+    conn.commit()
+    print("cocktail tabelflavor No-", j, " stored successfully")
+
+for i, j in zip(data2, range(1, 31)):
+    name = i.find('name').text
+    flavor = i.findall('flavor')
+
+    for k, l in zip(flavor, range(1, 6)):
         try:
             taste3 = k.find('taste3').text
         except:
             taste3 = ""
 
-    # sql query to insert data into database
-    data = """INSERT INTO flavor(name,taste1,taste2,taste3) VALUES(%s,%s,%s,%s)"""
-  
-    # creating the cursor object
+        try:
+            taste4 = k.find('taste4').text
+        except:
+            taste4 = ""
+
+    data = """INSERT INTO flavor_minor(name,taste3,taste4) VALUES(%s,%s,%s)"""
+
     c = conn.cursor()
-      
-    # executing cursor object
-    c.execute(data, (name, taste1, taste2, taste3))
+
+    c.execute(data, (name, taste3, taste4))
     conn.commit()
-    print("cocktail tabelflavor No-", j, " stored successfully")
+    print("cocktail tabelflavor_minor No-", j, " stored successfully")
