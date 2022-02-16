@@ -22,3 +22,5 @@ After a few questions, the chatbot will then return a cocktail recipe that is ch
   * XMLtoDB.py: Python code for extracting and inserting xml data into database
   * cocktail_db.sql: The database of cocktail recipes
   * cocktail.py: Python code for the chatbot using loops and SQL queries
+  * cocktail_test.py: Python code that is similar to cocktail.py, but with a fucntion that creates SQL queries in a more dynamic fashion
+  * Cocktail_Presentation Slides: Slides used for group presentation
