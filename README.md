@@ -21,6 +21,6 @@ After a few questions, the chatbot will then return a cocktail recipe that is ch
   * xml_schema.xml: xml schema for validating cocktails.xml
   * XMLtoDB.py: Python code for extracting and inserting xml data into database
   * cocktail_db.sql: The database of cocktail recipes
-  * cocktail.py: Python code for the chatbot using loops and SQL queries
-  * cocktail_test.py: Python code that is similar to cocktail.py, but with a function that creates SQL queries in a more dynamic fashion
+  * cocktail_chatbot.py: Python code for the chatbot using loops and SQL queries
+  * cocktail_chatbot_ver2.py: Python code that is similar to cocktail.py, but with a function that creates SQL queries in a more dynamic fashion
   * Cocktail_Presentation Slides: Slides used for group presentation
