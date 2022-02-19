@@ -56,28 +56,36 @@ class CocktailBot:
             f"Then you'll have a nice glass of {ingredient[0][0]}. Enjoy your cocktail!")
 
     def result(self):
+        # create queries based on the dictionary that is built based on the user input
         result_query = "SELECT i.* FROM sys.ingredient i INNER JOIN  sys.flavor f ON f.name = i.name INNER JOIN sys.cocktail c ON i.name = c.name WHERE"
+        # get the selected taste
         if "taste" in self.param.keys():
             result_query += "(f.taste1 = '{}' OR f.taste2 = '{}')".format(
                 self.param.get('taste'), self.param.get('taste'))
+        # get the selected hashtag
         if "hashtag" in self.param.keys():
             result_query += "AND (c.hashtag1 LIKE '%{}%' OR c.hashtag2 LIKE '%{}%' OR c.hashtag3 LIKE '%{}%')".format(
                 self.param.get('hashtag'), self.param.get('hashtag'), self.param.get('hashtag'))
+        # get the selected unwanted hastag
         if "not hashtag" in self.param.keys():
             result_query += "AND NOT (c.hashtag1 LIKE '%{}%' OR c.hashtag2 LIKE '%{}%' OR c.hashtag3 LIKE '%{}%')".format(
                 self.param.get('not hashtag'), self.param.get('not hashtag'), self.param.get('not hashtag'))
+        # get the selected base
         if "base" in self.param.keys():
             result_query += "AND i.base = '{}'".format(self.param.get("base"))
+        # check if syrup is wanted
         if "syrup" in self.param.keys():
             if self.param.get("syrup") == "no":
                 result_query += "AND i.syrup = ''"
             else:
                 result_query += "AND NOT i.syrup = ''"
+        # check if juice is wanted
         if "juice" in self.param.keys():
             if self.param.get("juice") == "no":
                 result_query += "AND i.juice1 = ''"
             else:
                 result_query += "AND NOT i.juice1 = ''"
+       # get the other selcted ingredients
         if "other" in self.param.keys():
             result_query += "AND (i.other1 LIKE '%{}%' OR i.other2 LIKE '%{}%')".format(
                 self.param.get("other"), self.param.get("other"))
