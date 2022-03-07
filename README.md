@@ -26,5 +26,5 @@ After a few questions, the chatbot will then return a cocktail recipe that is ch
      * flavor_minor(name, taste3, taste4)
      * ingredients(name, alcohol, additional)
   * cocktail_chatbot.py: Python code for the chatbot using loops and SQL queries
-  * cocktail_chatbot_ver2.py: Python code that is similar to cocktail.py, but with a function that creates SQL queries in a more dynamic fashion
+  * cocktail_chatbot_ver2.py: Python code that is similar to cocktail_chatbot.py, but with a function that creates SQL queries in a more dynamic fashion
   * Cocktail_Presentation Slides: Slides used for group presentation
